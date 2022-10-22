@@ -1,0 +1,39 @@
+﻿
+html{font-size:10px;}
+
+body
+{
+    background:linear-gradient(#044677,gray);
+}
+
+h1 {
+    margin: 2em;
+}
+
+    h1:hover {
+        cursor: pointer;
+    }
+
+
+.botones{ padding:5em; }
+
+.botones button
+{
+    padding:1.5em 1.5em; 
+    font-size:2em; 
+    font-weight:bold;
+    display:block;
+    border-radius:45px;
+    border:none;
+    margin:2em auto;
+    background-color:#0312bb;
+    color:gray;
+    transition:1s;
+}
+
+button:hover {
+    cursor: pointer;
+    padding: 1.8em 1.8em;
+    box-shadow: 0 0 10px 10px #c91ee2;
+    color: #c91ee2;
+}
