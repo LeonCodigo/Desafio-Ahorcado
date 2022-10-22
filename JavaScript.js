@@ -49,23 +49,28 @@ function crear_palabra_secreta() //funciona
 
 function verificador(e)
 {
-    
-
-    return e.key;
+    res = "null";
+    if (e.key.match(/[A-Z\s]/) !== null) {
+        res = e.key;
+    }
+    return res;
 }
 
 
-function letra_Correcta(e,pPalabra)
+function letra_Correcta(e)
 {
-    
-    let letra= "null";
+    let letra= "null",palabra="null";
     letra = verificador(e);
+    palabra = crear_palabra_secreta();
     if (letra !== "null")
     {
-        alert(pPalabra.includes(letra));
-        pincel.write("sdfsadfasdfasdf");
-        document.write(palabras.find(letra));
+        if (palabra.includes(letra)) { alert(letra + " encontrada"); }
+        else {
+            alert(letra + " NO EXISTE ❌");
+        }
+       
     }
+    else { alert("Solo se puede jugar con letras en MAYUSCULAS.") }
    
 }
 
