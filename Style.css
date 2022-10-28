@@ -1,36 +1,51 @@
 ﻿
 html{font-size:10px;}
 
-body
-{
-    width:1280px;
-    background:linear-gradient(#044677,gray);
+body {
+    width: 1280px;
+    height: 800px;
+    background: linear-gradient(#044677,gray);
+    position: relative;
 }
 
 h1 {
-    margin: 2em;
+    margin: 2em 0 0 2em;
 }
 
     h1:hover {
         cursor: pointer;
     }
 
-    .pantalla{margin:0 auto;}
 
-.botones{ padding:1em; }
+.botonesInicio {
+    position: absolute;
+    top: 20em;
+    left: 65em;
+}
 
-.botones button
-{
-    padding:1.5em 1.5em; 
-    font-size:2em; 
-    font-weight:bold;
-    display:block;
-    border-radius:45px;
-    border:none;
-    margin:2em auto;
-    background-color:#0312bb;
-    color:gray;
-    transition:1s;
+     button {      
+        display:block;
+        padding: 1.5em 1.5em;
+        font-size: 2em;
+        font-weight: bold;
+        border-radius: 45px;
+        border: none;
+        margin: 2em auto;
+        background-color: #0312bb;
+        color: gray;
+        transition: 1s;
+    }
+
+.botonesJuego button{display:none; margin:0 2em 0 auto;}
+
+.botonesJuego {
+    position: absolute;
+    top: 60em;
+    left: 45em;
+}
+
+.botonesAgregarPalabra {
+    display: none;
 }
 
 button:hover {
@@ -39,3 +54,4 @@ button:hover {
     box-shadow: 0 0 10px 10px #c91ee2;
     color: #c91ee2;
 }
+

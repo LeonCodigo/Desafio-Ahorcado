@@ -17,15 +17,31 @@
 
     <main>
 
-        <div class="pantalla"> <canvas width="640" height="480"></canvas> </div>
+        <div class="div_pantalla" > <canvas id="id_pantalla" width="1280" height="860"></canvas> </div>
 
-       
 
-        <div class="botones">
 
-            <button onclick="iniciar" id="btn_iniciar" tabindex="1" autofocus>Iniciar juego</button>
+        <div class="botonesInicio">
 
-            <button id="btn_agregar" tabindex="2" hidden>Agregar nueva palabra</button>
+            <button onclick="juego" id="btn_iniciar" tabindex="1" autofocus>Iniciar juego</button>
+
+            <button id="btn_agregar" tabindex="2">Agregar palabra</button>
+
+        </div>
+
+        <div class="botonesJuego">
+
+            <button onclick="juego" id="btn_nuevoJuego" tabindex="1" autofocus>Nuevo juego</button>
+
+            <button id="btn_desistir" tabindex="2">Desistir</button>
+
+        </div>
+
+        <div class="botonesAgregarPalabra">
+
+            <button onclick="" id="btn_guardarPalabra" tabindex="1" autofocus>Guardar y empezar</button>
+
+            <button onclick="mostrar_pantalla_inicial(true)" id="btn_cancelarAgregar" tabindex="2">Cancelar</button>
 
         </div>
 
