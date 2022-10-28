@@ -6,8 +6,14 @@ var btn_iniciar = document.getElementById("btn_iniciar");
 var btn_agregar = document.getElementById("btn_agregar");
 var btn_nuevoJuego = document.getElementById("btn_nuevoJuego");
 var btn_desistir = document.getElementById("btn_desistir");
-//var div_pantalla = document.getElementsByClassName("div_pantalla");
-//var div_pantalla = document.document.getElementById("id_pantalla");
+var btn_aceptarG = document.getElementById("btn_AceptarGanaste");
+var btn_aceptarP = document.getElementById("btn_AceptarPerdiste");
+
+// Carteles
+var cartel_ganar = document.getElementById("cartelGanaste");
+var cartel_perder = document.getElementById("cartelPerdiste"); 
+var textoPalabraCorrecta = document.getElementById("palabraCorrecta");
+
 //-----
 var tecladoHabilitado = false;
 var palabras = ["HOLA", "SALCHICHA", "PERRO", "JAMON", "TECLADO", "PIZZA", "CAMION", "RATA", "ROSA", "AIRE"];
@@ -93,7 +99,7 @@ function letra_Correcta(e)
 {
     
     palabraSecreta.lastIndexOf
-    alert("letra correcta: " + palabraSecreta);
+   
     let letra= "null",pos=0;
     letra = verificador(e);
     if (letra !== "null")
@@ -112,14 +118,13 @@ function letra_Correcta(e)
 
     if (palabraSecreta.length === letrasCorrectas.length)
     {
-        escribe_resultado("GANASTE !!! 🎇🎆🧨🧨🎊",450,100);
+        cartel_ganar.style.display = "block";
         document.removeEventListener("keypress", letra_Correcta);
     }
 
     if (letrasIncorrectas.length > 5) {
-        escribe_resultado("PERDISTE!!! 😭😢😛🐱‍🐉", 450, 100);
+        cartel_perder.style.display = "block";
         document.removeEventListener("keypress", letra_Correcta);
-
     }
 }
 
@@ -155,8 +160,9 @@ function iniciar_pantalla_inicial()
     mostrar_pantalla_inicial(true);
     mostrar_pantalla_juego(false)
     mostrar_pantalla_agregarPalabra(false);
-
 }
+
+
 
 
 function juego()
@@ -166,6 +172,8 @@ function juego()
     letrasCorrectas = [];
     letrasIncorrectas = [];
     palabraSecreta = crear_palabra_secreta();
+    alert(palabraSecreta);
+    textoPalabraCorrecta.textContent = palabraSecreta;
     crear_lineas(inicioX, palabraSecreta.length);
     document.addEventListener("keypress", letra_Correcta);
     letra_Correcta(e);   
@@ -174,4 +182,6 @@ function juego()
 btn_iniciar.onclick = juego;
 btn_nuevoJuego.onclick = juego;
 btn_desistir.onclick = iniciar_pantalla_inicial;
+btn_aceptarG.onclick = function() { cartel_ganar.style.display = "none"; }
+btn_aceptarP.onclick = function() { cartel_perder.style.display = "none"; }
 

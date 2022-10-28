@@ -46,6 +46,11 @@ h1 {
 
 .botonesAgregarPalabra {
     display: none;
+    border-color: black;
+    background: radial-gradient(#031cc4,#0312bb,#010a75);
+    position: absolute;
+    top: 30em;
+    left: 45em;
 }
 
 button:hover {
@@ -55,3 +60,24 @@ button:hover {
     color: #c91ee2;
 }
 
+.cartelGanaste-Perdiste {
+    display: none;
+    border-style:groove;
+    border-color: deepskyblue;
+    background: radial-gradient(#031cc4,#0312bb,#010a75);
+    position: absolute;
+    top: 15em;
+    left: 48em;
+    box-shadow: 10px 10px 10px 10px black;
+    border-radius:10px;
+
+}
+
+    .cartelGanaste-Perdiste p {
+        text-align: center;
+        font-size: 5em;
+        font-weight: bold;
+        color: #c91ee2
+    }
+
+    .cartelGanaste-Perdiste p span{color:gray;}
