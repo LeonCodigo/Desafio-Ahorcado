@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="Style.css" />
-  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
     <title>Ahorcado</title>
 </head>
 
@@ -12,12 +15,11 @@
 <body>
     <header>
         <h1> <a href="index.html"><img src="imagenes/logoalura.png" alt="Logo alura" /></a>  </h1>
-
     </header>
 
     <main>
 
-        <div class="div_pantalla"> <canvas id="id_pantalla" width="1280" height="860"></canvas> </div>
+        <div class="div_pantalla"> <canvas id="id_pantalla" width="1280" height="720"></canvas> </div>
 
 
 
@@ -25,7 +27,7 @@
 
             <button onclick="juego" id="btn_iniciar" tabindex="1" autofocus>Iniciar juego</button>
 
-            <button id="btn_agregar" tabindex="2">Agregar palabra</button>
+            <button id="btn_agregarInicio" tabindex="2">Agregar palabra</button>
 
         </div>
 
@@ -37,13 +39,13 @@
 
         </div>
 
-        <div class="botonesAgregarPalabra">
+        <div class="botonesAgregarPalabra" id="cartelNuevaPalabra">
 
-            <input type="text" size="10" maxlength="8" placeholder="Ingrese aca una nueva palabra" autofocus />
+            <input type="text" id="inputPalabra" size="40" maxlength="10" placeholder="Ingrese aca una nueva palabra" autofocus required />
 
             <button onclick="" id="btn_guardarPalabra" tabindex="1">Guardar y empezar</button>
 
-            <button onclick="mostrar_pantalla_inicial(true)" id="btn_cancelarAgregar" tabindex="2">Cancelar</button>
+            <button onclick="mostrar_pantalla_inicial()" id="btn_cancelarAgregar" tabindex="2">Cancelar</button>
 
         </div>
 
@@ -69,6 +71,7 @@
     </main>
 
     <footer>
+        <p>©Copyrigth León Germán-2022.</p>
     </footer>
 
     <script type="text/javascript" src="JavaScript.js"></script>

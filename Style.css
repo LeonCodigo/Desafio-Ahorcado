@@ -1,9 +1,14 @@
 ﻿
-html{font-size:10px;}
+
+html {
+    font-family: 'Lobster', cursive;
+    font-size: 10px;
+}
 
 body {
+    font-family: 'Lobster', cursive;
     width: 1280px;
-    height: 800px;
+    height: 1200px;
     background: linear-gradient(#044677,gray);
     position: relative;
 }
@@ -23,33 +28,24 @@ h1 {
     left: 65em;
 }
 
-     button {      
-        display:block;
-        padding: 1.5em 1.5em;
-        font-size: 2em;
-        font-weight: bold;
-        border-radius: 45px;
-        border: none;
-        margin: 2em auto;
-        background-color: #0312bb;
-        color: gray;
-        transition: 1s;
-    }
+button {
+    display: block;
+    padding: 1.5em 1.5em;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 45px;
+    border: none;
+    margin: 2em auto;
+    background-color: #0312bb;
+    color: gray;
+    transition: 1s;
+}
 
 .botonesJuego button{display:none; margin:0 2em 0 auto;}
 
 .botonesJuego {
     position: absolute;
     top: 60em;
-    left: 45em;
-}
-
-.botonesAgregarPalabra {
-    display: none;
-    border-color: black;
-    background: radial-gradient(#031cc4,#0312bb,#010a75);
-    position: absolute;
-    top: 30em;
     left: 45em;
 }
 
@@ -60,24 +56,54 @@ button:hover {
     color: #c91ee2;
 }
 
+
+.botonesAgregarPalabra {
+    display: none;
+    border-color: black;
+    position: absolute;
+    top: 20em;
+    left: 40em;
+}
+
+
+    .botonesAgregarPalabra #inputPalabra {
+        font-family: 'Lobster', cursive;
+        border: none;
+        background: none;
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+        color: mediumblue;
+        text-shadow: 5px 5px 5px 5px black;
+    }
+
 .cartelGanaste-Perdiste {
     display: none;
-    border-style:groove;
+    border-style: groove;
     border-color: deepskyblue;
     background: radial-gradient(#031cc4,#0312bb,#010a75);
     position: absolute;
     top: 15em;
     left: 48em;
     box-shadow: 10px 10px 10px 10px black;
-    border-radius:10px;
-
+    border-radius: 10px;
+    transform: scale(1.2);
 }
 
     .cartelGanaste-Perdiste p {
         text-align: center;
         font-size: 5em;
         font-weight: bold;
-        color: #c91ee2
+        color: #c91ee2;
     }
 
     .cartelGanaste-Perdiste p span{color:gray;}
+
+
+footer p {
+    color: black;
+    text-align:center;
+    font-weight: bold;
+    position: center;
+    font-size: 1.2em;
+}
