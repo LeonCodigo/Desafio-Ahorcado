@@ -21,6 +21,8 @@ h1 {
         cursor: pointer;
     }
 
+    #senialador{position:absolute; color:red;font-weight:bold; font-size:2em; left: 885px;top:100px;}
+
 
 .botonesInicio {
     position: absolute;
