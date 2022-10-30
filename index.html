@@ -19,7 +19,7 @@
 
     <main>
 
-        <div class="div_pantalla"> <canvas id="id_pantalla" width="1280" height="720"></canvas> </div>
+        <div class="div_pantalla"> <canvas id="id_pantalla" width="1280" height="620"></canvas> </div>
 
         <div class="botonesInicio">
 
@@ -37,15 +37,21 @@
 
         </div>
 
-        <div class="botonesAgregarPalabra" id="cartelNuevaPalabra">
+        <form action="">
+            
+            <div class="botonesAgregarPalabra" id="cartelNuevaPalabra">
 
-            <input type="text" id="inputPalabra" size="40" maxlength="10" placeholder="Ingrese aca una nueva palabra" autofocus required />
+                <input type="text" id="inputPalabra" size="41" maxlength="12" pattern="[A-Z]{1-12}" placeholder="Ingrese nueva palabra" autofocus required />
 
-            <button onclick="" id="btn_guardarPalabra" tabindex="1">Guardar y empezar</button>
+                <button type="submit" onclick="juego()" id="btn_guardarPalabra" tabindex="1">Guardar y empezar</button>
 
-            <button onclick="mostrar_pantalla_inicial()" id="btn_cancelarAgregar" tabindex="2">Cancelar</button>
+                <button onclick="mostrar_pantalla_inicial()" id="btn_cancelarAgregar" tabindex="2">Cancelar</button>
 
-        </div>
+            </div>
+
+        </form>
+
+        
 
         <div class="cartelGanaste-Perdiste" id="cartelGanaste">
 

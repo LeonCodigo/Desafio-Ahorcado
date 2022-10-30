@@ -14,20 +14,18 @@ body {
 }
 
 h1 {
-    margin: 2em 0 0 2em;
+    margin: 2em 0 0 1em;
 }
 
     h1:hover {
         cursor: pointer;
     }
 
-    #senialador{position:absolute; color:red;font-weight:bold; font-size:2em; left: 885px;top:100px;}
-
 
 .botonesInicio {
     position: absolute;
     top: 20em;
-    left: 65em;
+    left: 54em;
 }
 
 button {
@@ -47,7 +45,7 @@ button {
 
 .botonesJuego {
     position: absolute;
-    top: 60em;
+    top: 55em;
     left: 45em;
 }
 
@@ -64,7 +62,7 @@ button:hover {
     border-color: black;
     position: absolute;
     top: 20em;
-    left: 40em;
+    left: 30em;
 }
 
 
