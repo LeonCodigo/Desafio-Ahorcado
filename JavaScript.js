@@ -17,11 +17,12 @@ var cartel_perder = document.getElementById("cartelPerdiste");
 var textoPalabraCorrecta = document.getElementById("palabraCorrecta");
 var cartel_nuevaPalabra = document.getElementById("cartelNuevaPalabra");
 
+//variables
 var palabraIngresada = document.getElementById("inputPalabra");
 //-----
 var tecladoHabilitado = false;
 var palabras = ["TECLADO", "RATON", "MICROFONO", "MONITOR", "COMPUTADORA", "USB", "CAMARA", "PENDRIVE", "WIFI", "CPU", "ESCRITORIO", "TELEVISOR"];
-var separacion = 35, inicioX = 500, inicioY = 400;
+var separacion = 35, inicioX = 500, inicioY = 400,iniTravesanioX=600,finTravesanioX=820;
 
 
 
@@ -148,41 +149,48 @@ function dibujaPalos(pX, pY, finX, finY, pGrosor) {
     pincel.closePath();
 }
 
+//horca y ahorcado -- V V --
 function dibuja_parapeto() {
     dibujaPalos(inicioX, inicioY - 60, 800, inicioY - 60, 15); // BASE
+
+    dibujaPalos(inicioX + 100, inicioY - 65, inicioX + 150, inicioY - 90, 10);//refuerzo mastil
+    dibujaPalos(inicioX + 250, inicioY - 65, inicioX + 150, inicioY - 90, 10);//refuerzo mastil
+
     dibujaPalos(inicioX + 150, inicioY - 65, inicioX + 150, (inicioY - 75 - 280), 15); // MASTIL
-    dibujaPalos(inicioX + 150, (inicioY - 75 - 280), 900, (inicioY - 75 - 280), 9); // BRAZO
+
+
+    dibujaPalos(iniTravesanioX, (inicioY - 75 - 290), finTravesanioX, (inicioY - 75 - 290), 9); // travesanio
+    dibujaPalos(inicioX + 150, (inicioY - 75 - 220), finTravesanioX - 80, (inicioY - 75 - 288), 10);//refuerzo travesanio
+
 }
 
 function dibuja_circulo() {
     pincel.fillStyle = "#e7c874";
-    pincel.arc(900, 105, 20, 0, 2 * 3.14);
+    pincel.arc(finTravesanioX, 105, 20, 0, 2 * 3.14);
     pincel.fill();
 }
 
 
-
 function dibuja_hombrecito(pArreglo)
 {
-    // control de estado del hombre con palabras_incorrectas.length
-    //cabeza 
-
-    if (pArreglo.length === 0) { dibujaMiembros(900, 50, 900, 83, 5, "#ff7d00"); }//soga 
-
-    if (pArreglo.length === 1) { dibujaMiembros(900, 50, 900, 83, 5, "#ff7d00"); dibuja_circulo(); }
+    //dibuja cabeza y soga
+    if (pArreglo.length === 1) { dibujaMiembros(finTravesanioX, 40, finTravesanioX, 83, 5, "#ff7d00"); dibuja_circulo(); }
 
     if (pArreglo.length === 2) {
-        dibujaMiembros(900, 120, 900, 220, 15, "#e7c874"); }//torzo
+        dibujaMiembros(finTravesanioX, 120, finTravesanioX, 220, 15, "#e7c874"); }//torzo
+
     if (pArreglo.length === 3) {
-        dibujaMiembros(900, 125, 870, 170, 10, "#e7c874");
+        dibujaMiembros(finTravesanioX, 125, finTravesanioX-30, 170, 10, "#e7c874");
     }// brazo izquierdo
 
-    if (pArreglo.length === 4) { dibujaMiembros(900, 125, 930, 170, 10, "#e7c874"); }
+    if (pArreglo.length === 4) { dibujaMiembros(finTravesanioX, 125, finTravesanioX+30, 170, 10, "#e7c874"); }
     // brazo der
 
-    if (pArreglo.length === 5) { dibujaMiembros(900, 210, 870, 260, 12, "#e7c874"); }// pierna izq
-    if (pArreglo.length === 6) { dibujaMiembros(900, 210, 930, 260, 12, "#e7c874"); dibujaMiembros(893, 125, 907, 125, 5, "#ff7d00"); } // pierna der y soga cuello   
+    if (pArreglo.length === 5) { dibujaMiembros(finTravesanioX, 210, finTravesanioX-30, 260, 12, "#e7c874"); }// pierna izq
+    if (pArreglo.length === 6) { dibujaMiembros(finTravesanioX, 210, finTravesanioX + 30, 260, 12, "#e7c874"); dibujaMiembros(finTravesanioX - 7, 125, finTravesanioX+7, 125, 5, "#ff7d00"); } // pierna der y soga cuello   
 }
+
+//------------ ^^ --
 
 function mostrar_pantalla_inicial(bool) {
     let ubicacion = "none";
@@ -199,8 +207,6 @@ function mostrar_pantalla_juego(bool) {
     btn_nuevoJuego.style.display = ubicacion;
     btn_desistir.style.display = ubicacion;
 }
-
-
 
 function mostrar_pantalla_agregarPalabra(Bool) {
     let ubicacion = "none";
@@ -220,11 +226,15 @@ function iniciar_pantalla_inicial() {
 
 function fun_AgregarPalabra() {
     cartel_nuevaPalabra.style.display = "block";
-    if (palabraIngresada.value != "") {
-        palabras.push(palabraIngresada.value);
-        palabraIngresada.value = "";
-        cartel_nuevaPalabra.style.display = "none";
-        juego();
+    if (palabraIngresada.value != "")
+    {
+        if (palabraIngresada.value.match("[A-Z]") !== null) {
+            palabras.push(palabraIngresada.value);
+            palabraIngresada.value = "";
+            cartel_nuevaPalabra.style.display = "none";
+            juego();
+        }
+        else { alert("Solo se puede jugar con letras en MAYUSCULAS.");}
     }
     else { alert("Debe ingresar una palabra"); }
 }
